@@ -11,4 +11,13 @@ router.get('/', async function (req, res, next){
     }
 });
 
+router.post('/createPlayer', async function(req, res, next){
+    try {
+        res.json(await nbaPlayers.createPlayer(req.body));
+    } catch(err) {
+        console.log(`Error while creating player`, err.message);
+        next(err);
+    }
+});
+
 module.exports = router;

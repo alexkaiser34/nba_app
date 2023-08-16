@@ -10,6 +10,21 @@ async function getPlayerName(){
     return data;
 }
 
+async function createPlayer(player){
+    const result = await db.query(
+        `INSERT INTO players
+        (first_name, last_name, id)
+        VALUES
+        ('${player.first_name}','${player.last_name}', ${player.id})`
+    );
+    if (result.affectedRows){
+        return "Player created successfully";
+    }
+
+    return "Error in creating player";
+}
+
 module.exports = {
-    getPlayerName
+    getPlayerName,
+    createPlayer
 }
