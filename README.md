@@ -6,4 +6,4 @@ This application is intended to show different statistics of nba players in a GU
 
 ## Running application
 1. Initially, run `npm install` to install node modules
-2. run `npm start` to launch server and client
+2. run `npm run dev` to launch server and client
