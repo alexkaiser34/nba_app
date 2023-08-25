@@ -1,19 +1,17 @@
 const path = require('path');
-
-const { app, BrowserWindow } = require('electron');
-
-const server = require('./server/server');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const isDev = require('electron-is-dev');
 
 function createWindow() {
 
-    server.start();
+    // server.start();
     // Create the browser window.
     const win = new BrowserWindow({
         width: 800,
         height: 600,
         webPreferences: {
-        nodeIntegration: true,
+          nodeIntegration: true,
+          preload: path.join(__dirname, './api/preload.js'),
         },
     });
 
@@ -50,3 +48,5 @@ app.on('activate', () => {
     createWindow();
   }
 });
+
+require('./api/ipcHandles');

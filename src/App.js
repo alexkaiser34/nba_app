@@ -2,38 +2,28 @@ import { useState, useEffect, useCallback } from "react";
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
+import { getPlayer, postPlayer } from "./api/player";
 
 function App() {
 
   const [data, setData] = useState([]);
 
   const handlePost = useCallback(async function(){
-    await fetch('/nbaPlayers/createPlayer', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        first_name: "Stephen",
-        last_name: "Curry",
-        id: 4,
-      })
-    })
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
 
-    await fetch("/nbaPlayers")
-      .then((res) => res.json())
-      .then((data_json) => {
-        setData(data_json)
-    });
+    await postPlayer(JSON.stringify({
+      first_name: "Stephen",
+      last_name: "Curry",
+      id: 4,
+    }));
+
+    await getPlayer()
+      .then((res) => setData(res))
 
    }, []);
 
   useEffect(() => {
-    fetch("/nbaPlayers")
-      .then((res) => res.json())
-      .then((data_json) => {
-        setData(data_json)
-      })
+    getPlayer()
+      .then((res) => setData(res))
   },[])
 
   return (
