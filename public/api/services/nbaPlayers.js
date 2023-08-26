@@ -3,29 +3,22 @@ const helper = require('./helper');
 
 
 async function getPlayerName(){
-    const rows = await request(
-        {"query": 'SELECT first_name, last_name from players'},
-        {
-            endpoint: '/query',
-            method: 'POST'
-        }
-    );
+    const rows = await request({
+        endpoint: '/nbaPlayers/getAllPlayerNames',
+        method: 'GET'
+    });
     const data = helper.emptyOrRows(rows);
 
     return data;
 }
 
 async function createPlayer(player){
-    const result = await request(
-        {"query": `INSERT INTO players
-        (first_name, last_name, id)
-        VALUES
-        ('${player.first_name}','${player.last_name}', ${player.id})`},
-        {
-            endpoint: '/query',
-            method: 'POST'
-        }
-    );
+    const result = await request({
+        endpoint: '/nbaPlayers/createPlayer',
+        method: 'POST',
+        data: player
+    });
+
     if (result.affectedRows){
         return "Player created successfully";
     }
