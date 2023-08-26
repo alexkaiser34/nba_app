@@ -1,11 +1,11 @@
-diff --git a/public/api/services/config.js b/public/api/services/config.js
-index 11bd6f8..c4fcb4b 100644
---- a/public/api/services/config.js
-+++ b/public/api/services/config.js
+diff --git a/public/api/backend/config.js b/public/api/backend/config.js
+index 23e41e2..78c669b 100644
+--- a/public/api/backend/config.js
++++ b/public/api/backend/config.js
 @@ -1,5 +1,5 @@
  const config = {
--    url: 'https://nba_app_db-kaiserale.pitunnel.com/query',
-+    url: 'http://localhost:3001/query',
-     method: 'POST',
+-    url: 'https://nba_app_db-kaiserale.pitunnel.com',
++    url: 'http://localhost:3001',
      headers: {
          'Accept': 'application/json',
+         'Content-Type': 'application/json'
