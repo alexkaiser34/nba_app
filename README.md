@@ -7,3 +7,8 @@ This application is intended to show different statistics of nba players in a GU
 ## Running application
 1. Initially, run `npm install` to install node modules
 2. run `npm run dev` to launch server and client
+
+
+## Remote server vs local machine
+When developing, run `git apply devel.patch` from the root of the project
+to run application on your localhost instead of remote server.
