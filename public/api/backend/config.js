@@ -1,6 +1,5 @@
 const config = {
-    url: 'https://nba_app_db-kaiserale.pitunnel.com/query',
-    method: 'POST',
+    url: 'https://nba_app_db-kaiserale.pitunnel.com',
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'

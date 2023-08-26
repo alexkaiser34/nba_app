@@ -1,21 +1,30 @@
-const db = require('./db');
+const request = require('../backend/request').request;
 const helper = require('./helper');
-const config = require('./config');
 
 
 async function getPlayerName(){
-    const rows = await db.query('SELECT first_name, last_name from players');
+    const rows = await request(
+        {"query": 'SELECT first_name, last_name from players'},
+        {
+            endpoint: '/query',
+            method: 'POST'
+        }
+    );
     const data = helper.emptyOrRows(rows);
 
     return data;
 }
 
 async function createPlayer(player){
-    const result = await db.query(
-        `INSERT INTO players
+    const result = await request(
+        {"query": `INSERT INTO players
         (first_name, last_name, id)
         VALUES
-        ('${player.first_name}','${player.last_name}', ${player.id})`
+        ('${player.first_name}','${player.last_name}', ${player.id})`},
+        {
+            endpoint: '/query',
+            method: 'POST'
+        }
     );
     if (result.affectedRows){
         return "Player created successfully";

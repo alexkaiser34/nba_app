@@ -1,12 +1,12 @@
 const config = require('./config');
 
 /** make request to web server, which will handle the DB query */
-async function query(sql, params) {
-    const result = await fetch(config.url,
+async function request(sql, params) {
+    const result = await fetch(config.url + params.endpoint,
         {
-            method: config.method,
+            method: params.method,
             headers: config.headers,
-            body: JSON.stringify({ "query": sql })
+            body: JSON.stringify(sql)
         }
     )
    .then(response => {return response.json()})
@@ -15,5 +15,5 @@ async function query(sql, params) {
 }
 
 module.exports = {
-    query
+    request
 }
