@@ -1,0 +1,22 @@
+export interface Player {
+    PlayerID: number,
+    Status: string | null,
+    TeamID: number,
+    Jersey: number,
+    Position: string,
+    FirstName: string,
+    LastName: string,
+    Height: number | null,
+    Weight: number | null,
+    BirthDate: string | null,
+    BirthCity: string | null,
+    BirthState: string | null,
+    BirthCountry: string | null,
+    College: string | null,
+    Salary: number | null,
+    Experience: number | null,
+    FanDuelPlayerID: number | null,
+    DraftKingsPlayerID: number | null,
+    NbaDotComPlayerID: number | null,
+    Headshot: string | null
+};
