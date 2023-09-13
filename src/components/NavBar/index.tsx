@@ -13,7 +13,7 @@ function AppNavBar(){
 
 
     return (
-        <Navbar fixed="top" expand="md" bg={themeColor} variant={themeColor}>
+        <Navbar sticky="top" expand="md" bg={themeColor} variant={themeColor}>
         <Container fluid>
           <Navbar.Brand href="Home">NBA-App</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
