@@ -1,5 +1,4 @@
 import { useCallback, useContext, useState } from "react"
-import { AppContext } from "../utils/context"
 
 export function useWrappedRequest() {
   const [loading, setLoading] = useState(false)

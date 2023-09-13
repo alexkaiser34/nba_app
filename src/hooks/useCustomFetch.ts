@@ -1,11 +1,11 @@
 import { useCallback, useContext } from "react"
-import { AppContext } from "../utils/context"
+import { ApiContext } from "../utils/context"
 import { useWrappedRequest } from "./useWrappedRequest";
 import { registeredEndpoints }  from "../types/endpoints";
 import { fetch } from "../utils/fetch";
 
 export function useCustomFetch(){
-    const { cache } = useContext(AppContext);
+    const { cache } = useContext(ApiContext);
     const { loading, wrappedRequest } = useWrappedRequest();
 
     const fetchWithCache = useCallback(
