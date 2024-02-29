@@ -8,4 +8,4 @@ type currentEndpoints = '/current' | '/current/boxScores';
 
 
 
-export type registeredEndpoints = playersEndpoints | scoreEndpoints | standingEndpoints | statsEndpoints | teamsEndpoints | currentEndpoints;
+export type registeredEndpoints = playersEndpoints | scoreEndpoints | standingEndpoints | statsEndpoints | teamsEndpoints | currentEndpoints | any;

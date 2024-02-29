@@ -24,7 +24,7 @@ function App() {
    */
   useEffect(() => {
     fetchWithCache<Player[], null>(
-      '/players/getAll'
+      '/players'
     )
     .then((res) => {
       if(res !== undefined){
@@ -38,7 +38,7 @@ function App() {
     .catch((err) => console.log(err));
 
     fetchWithCache<Team[], null>(
-      '/teams/getAll'
+      '/teams'
     )
     .then((res) => {
       if(res !== undefined){

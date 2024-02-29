@@ -2,7 +2,9 @@ import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import { fetchMethod } from "../types/api";
 import { registeredEndpoints } from "../types/endpoints";
 
-const baseURL = 'http://nbaappbackend.us-east-1.elasticbeanstalk.com';
+// const baseURL = 'http://nbaappbackend.us-east-1.elasticbeanstalk.com';
+const baseURL = 'http://localhost:3000';
+
 
 
 export function fetch<TData, TParam>(
